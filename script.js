@@ -31,11 +31,33 @@ function divisor(num, num1, num2){
 //console.log(divisor(2, 0, 2));
 
 // Task 4 : Output first 100 Prime Numbers
-for (let i = 0; i <= 100; i++){
-    
+for (let count = 0; count < 100; count++){
+
+    while (count != 100){
+        
+        
+
+    }
+
 }
 
 // Task 5 : Return boolean value if a number is Prime number or not
+function isPrime(num){
+    if (num === 2)
+        return true;
+    if (num <= 1 || num % 2 === 0 || (num > 5 && num % 5 === 0))
+        return false;
+
+    let limit = Math.floor(Math.sqrt(num));
+    
+    for (let i = 3; i <= limit; i += 2)
+        if (num % i === 0)
+            return false
+
+    return true;
+}
+
+//isPrime(143);
 
 // Task 6 : Return positive items of a Diverse Array
 function positiveItems(arr){
@@ -71,6 +93,15 @@ function FizzBuzz(){
 //FizzBuzz();
 
 // Task 8 : Hashtag Generator
-function Hashtag(){
-    
+function Hashtag(input){
+    let result = "#";         
+
+    result += input.replace(/\b\w/g, function (match){return match.toUpperCase()}).replaceAll(' ', '');
+
+    if (result.length > 140 || result == '')
+        return false;
+
+    return result;
 }
+
+//console.log(Hashtag("AI is the future"));
